@@ -1,0 +1,27 @@
+Machine Coding Question 1 — "User Directory Table"
+
+👉 API: https://jsonplaceholder.typicode.com/users
+
+Task:
+
+Fetch the data and display it in an HTML table.
+
+Columns should be:
+
+Name
+
+Email
+
+Company Name
+
+Website
+
+Add a search bar on top of the table to filter rows by name or email.
+
+⚠️ Rules:
+
+Use React functional components with useState and useEffect.
+
+No external UI libraries (pure React + HTML).
+
+No CSS required, just functionality.
