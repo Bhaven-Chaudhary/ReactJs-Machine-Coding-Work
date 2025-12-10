@@ -1,0 +1,28 @@
+✅ React Interview Question – OTP Input Component
+📌 Task
+
+Create a React component named OtpInput that collects a 6-digit numeric OTP from the user.
+
+✅ Requirements
+
+1. UI Requirements
+
+Display 6 input boxes in a single horizontal row.
+
+Each input box should accept only one digit (0–9).
+
+If the user types a non-digit, ignore it.
+
+2. Behavior Requirements
+
+When a user types a digit, the focus should automatically move to the next box.
+
+When the user presses Backspace on an empty box, focus should move to the previous box.
+
+3. Completion Requirements
+
+When all 6 boxes are filled, the component should call a function:
+
+onComplete(otpString)
+
+where otpString is like "928371".
