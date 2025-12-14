@@ -1,0 +1,40 @@
+StarWarsTable Question
+Unique ID: SW-Table-001
+
+You are building a small app that shows a list of Star Wars people in a table.
+
+Input API
+
+https://swapi.dev/api/people/?format=json
+
+Response format (simplified)
+json
+[
+{
+"name": "Luke Skywalker",
+"vehicles": ["https://swapi.dev/api/vehicles/14/", "..."],
+"films": ["https://swapi.dev/api/films/1/", "..."]
+}
+]
+
+Requirements
+Fetch people list on component mount
+
+Show loading spinner while main list loads
+
+Render table with 3 columns: Name | Vehicles | Films
+
+For each person row:
+
+Name: direct name from person
+
+Vehicles: call each vehicle URL → get name → join with ,
+
+Films: call each film URL → get title → join with ,
+
+Must handle:
+Loading state for main list
+
+Individual vehicle/film fetch errors (show "Unknown" for failed ones)
+
+Don't crash if empty arrays
