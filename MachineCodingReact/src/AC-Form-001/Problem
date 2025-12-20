@@ -1,0 +1,59 @@
+Unique ID: AC-Form-001
+
+You are building a small form that supports autocomplete fields.
+
+Problem
+You are given this API:
+
+https://api.mockfly.dev/mocks/d3753b2a-76d2-4cc5-b056-fdc2a65b833c/interview​
+
+1. Data requirement
+   Fetch the data from this URL when the component mounts.
+
+The response is an array of field definitions.
+
+Each field object has at least:
+
+id
+
+label
+
+type
+
+For autocomplete fields: options (array of strings or objects with label).
+
+2. Rendering rules
+   For each item in the array:
+
+If type === "choice-autocomplete":
+
+Render an autocomplete input:
+
+A text input.
+
+A dropdown list of options below it.
+
+If type is anything else:
+
+Render a simple text saying:
+"Unsupported component: <type>"
+
+3. Autocomplete behavior
+   For each autocomplete field:
+
+When user types into the input:
+
+Filter the options based on the input text (case-insensitive contains match).
+
+Show only matching options in the dropdown.
+
+On clicking an option:
+
+Fill the input with that option’s label.
+
+Hide the dropdown.
+
+4. Basic UX
+   Show "Loading..." while fetching the form definition.
+
+If the API request fails, show "Failed to load form".
