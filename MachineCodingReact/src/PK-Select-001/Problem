@@ -1,0 +1,46 @@
+You are building a small Pokémon selector using the PokéAPI.
+​
+
+Problem
+
+1. Fetch Pokémon list
+   On component mount, call this API:
+   https://pokeapi.co/api/v2/pokemon
+   ​
+
+The response has a results array like:
+
+json
+{
+"results": [
+{ "name": "bulbasaur", "url": "https://pokeapi.co/api/v2/pokemon/1/" },
+...
+]
+}
+Use this array to fill a <select> dropdown:
+
+Each option label: Pokémon name
+
+Each option value: its url
+
+2. When user selects a Pokémon
+   When the user chooses a Pokémon from the dropdown:
+
+Call the selected Pokémon’s url.
+
+That response contains an abilities array. Each item has a nested ability.name.
+​
+
+Show the list of ability names below the select.
+
+Example (text or list):
+Abilities: overgrow, chlorophyll
+
+3. Requirements
+   Show "Loading..." while the initial list is loading.
+
+If fetching the list fails, show "Failed to load Pokémon".
+
+While loading the selected Pokémon details, show something like "Loading abilities..." (optional but good).
+
+Handle the case when a Pokémon has no abilities (show No abilities found).
