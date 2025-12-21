@@ -1,0 +1,50 @@
+Unique ID: UA-Tracker-001
+
+You are building a UserActivityTracker component to detect when the user is inactive and then ping a server.
+
+Problem
+Build a component that:
+
+Tracks user activity on the page:
+
+Treat these as “activity” events:
+
+Mouse move
+
+Key press
+
+Scroll
+
+Click
+​
+
+Inactivity rule:
+
+If the user is inactive for more than 3 seconds (no activity events),
+
+Send a GET request to a given URL, e.g. https://example.com/inactive.
+​
+
+Resetting:
+
+After sending the GET request once, start tracking again:
+
+If user becomes active again, reset the timer.
+
+If they go inactive again for 3 seconds, send another GET.
+
+Cleanup:
+
+When the component unmounts, remove all event listeners and clear timers.
+
+Requirements
+Props:
+
+inactiveUrl: string – the URL to call when user is inactive for 3s.
+
+Use a 3-second timeout for inactivity.
+
+Use only client-side events (no external libraries).
+​
+
+Avoid memory leaks: add/remove listeners correctly and clear setTimeout on unmount.
