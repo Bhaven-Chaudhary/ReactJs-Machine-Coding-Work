@@ -1,0 +1,64 @@
+Unique ID: List-Filter-001
+
+You are building a search + filter list component, a very common machine coding pattern for frontend rounds.
+​
+
+Problem
+Build a component that shows a list of users and lets the user search and filter them.
+
+1. Input data
+   Assume you are given this static array in your component:
+
+js
+const users = [
+{ id: 1, name: "Alice", age: 25, role: "admin" },
+{ id: 2, name: "Bob", age: 19, role: "user" },
+{ id: 3, name: "Charlie", age: 32, role: "manager" },
+{ id: 4, name: "David", age: 17, role: "user" },
+{ id: 5, name: "Eva", age: 28, role: "admin" },
+]; 2. UI requirements
+On the page, render:
+
+A text input for search by name.
+
+A select dropdown for role with options:
+
+All
+
+admin
+
+user
+
+manager
+
+A checkbox: "Show only age 18 and above".
+
+A list or table of users that updates live based on filters.
+
+3. Filtering behavior
+   Name search:
+
+Case-insensitive.
+
+Matches if the user’s name contains the search text.
+
+Role filter:
+
+If All is selected, do not filter by role.
+
+Otherwise show only users with that role.
+
+Age checkbox:
+
+If checked → show only users with age >= 18.
+
+If unchecked → ignore age filter.
+
+The final displayed list should always be:
+
+users filtered by (name + role + age) all together.
+
+4. Extras
+   Show a small text like: Showing X users above the list.
+
+If no users match the filters, show: No users found.
