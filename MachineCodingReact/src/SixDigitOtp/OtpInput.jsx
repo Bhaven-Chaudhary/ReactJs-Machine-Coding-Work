@@ -10,6 +10,8 @@ export default function ({}) {
   function handelInputChange(index, event) {
     let value = event.target.value.replace(/\D/g, "");
 
+    if (!value) return;
+
     setOtp((prev) => {
       let tempValue = [...otp];
       tempValue[index] = value;
@@ -19,6 +21,19 @@ export default function ({}) {
     //Move to next box automatically
     if (index < otpLength - 1 && value) {
       inputRef.current[index + 1].focus(); //ref of next input box
+    }
+  }
+
+  function handleKeyPress(event, index) {
+    if (event.key === "Backspace") {
+      setOtp((prevOtp) => {
+        let temp = [...prevOtp];
+        temp[index] = "";
+        return temp;
+      });
+      if (index > 0) {
+        inputRef.current[index - 1].focus();
+      }
     }
   }
 
@@ -44,6 +59,7 @@ export default function ({}) {
               className={styles.input}
               maxLength={1}
               onInput={(event) => handelInputChange(index, event)}
+              onKeyDown={(e) => handleKeyPress(e, index)}
             />
           );
         })}
