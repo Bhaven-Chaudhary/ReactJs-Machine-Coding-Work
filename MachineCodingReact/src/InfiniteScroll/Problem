@@ -1,0 +1,52 @@
+Unique ID: Infinite-Scroll-001
+
+You are building an infinite scrolling list using pagination, a very common machine coding question.
+​
+
+Problem
+Build a component that shows a paginated list and loads more when the user scrolls to the bottom.
+
+1. API (use this exact endpoint)
+text
+https://pokeapi.co/api/v2/pokemon
+First call returns:
+
+json
+{
+  "count": 1154,
+  "next": "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20",
+  "previous": null,
+  "results": [ {name: "bulbasaur", url: "..."}, ... ]  // 20 items
+}
+Next calls follow the next URL until next becomes null.
+
+2. UI requirements
+Show a vertical list of Pokémon names.
+
+When user scrolls to bottom of the page → automatically load the next page and append to the existing list.
+
+Show loading spinner at the bottom while fetching next page.
+
+When all data loaded → show "All Pokémon loaded!" instead of spinner.
+
+If fetch fails → show "Error loading more" with a retry button.
+
+3. Behavior details
+Load first page when component mounts.
+
+Keep loading until next is null.
+
+Do not reset list on new fetches – keep appending names.
+
+Use Intersection Observer or scroll event (your choice) to detect "bottom reached".
+​
+
+4. State to track
+List of all Pokémon names so far.
+
+isLoading for next page.
+
+hasMore boolean (true if next exists).
+
+error state.
+
